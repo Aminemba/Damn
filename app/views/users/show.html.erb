@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="text-center">
+  <h1> Welcome to your Profile , <strong><%= @user.name %></strong> </h1>
+  <p> <strong>User email:</strong> <%= @user.email %></p>
+<br>
+ <h3> <strong>My Activity</strong></h3>
+  <% @posts.each do |post| %>
+  <section>
+    <p class="created_at"><%= post.created_at.strftime('%Y/%-m/%-d %-H:%-M') %></p>
+    <p><%= post.content %></p>
+    <%= image_tag(post.image.url) if post.image && post.image.url %>
+    <%= link_to posts_path %>
+  </section>
+  <% end %>
+</div>
