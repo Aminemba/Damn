@@ -2,12 +2,10 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [ :show , :edit, :update, :destroy]
 
-
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
     @post = @user.posts.build
-    @comments = Comment.all
   end
 
   def index
@@ -67,4 +65,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit( :name, :email, :password , :password_confirmation)
   end
+
 end

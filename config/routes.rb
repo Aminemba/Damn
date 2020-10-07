@@ -6,6 +6,12 @@ Rails.application.routes.draw do
 
   resources :users
 
+  # controller :sessions do
+  # get  'login' => :new
+  # post 'login' => :create
+  # delete 'logout' => :destroy
+  # end
+
   resources :posts ,only: [:new ,:show , :update , :confirm, :edit, :index, :create, :destroy] do
   get "/post/:id", to: "post#destroy"
     collection do
@@ -13,4 +19,4 @@ Rails.application.routes.draw do
     end
 end
 
-end 
+end
