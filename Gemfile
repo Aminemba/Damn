@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 
 
+
 gem 'rake', '~> 13.0', '>= 13.0.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bulma-rails', '~> 0.9.0'
@@ -50,12 +51,18 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'launchy'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+
+  gem 'capybara'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
